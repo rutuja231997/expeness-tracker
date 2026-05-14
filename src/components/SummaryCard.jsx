@@ -9,7 +9,7 @@ import { summaryCardConfig } from "../config/summaryCardConfig";
 const SummaryCard = () => {
   const { expenses } = useContext(ExpenseContext);
 
-  const { rate, targetCurrency } = useContext(CurrencyContext);
+  const { rate, targetCurrency, loading } = useContext(CurrencyContext);
 
   const currencySymbol = currencyConfig[targetCurrency]?.symbol;
 
@@ -47,6 +47,7 @@ const SummaryCard = () => {
             icon={card.icon}
             iconBgColor={card.bgColor}
             iconColor={card.iconColor}
+            loading={loading}
           />
         );
       })}

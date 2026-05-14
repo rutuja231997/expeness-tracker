@@ -5,7 +5,7 @@ import { GoPlus } from "react-icons/go";
 
 import { ExpenseContext } from "../context/ExpenseContext";
 
-import { category_arr } from "../constants/categories";
+import { category_arr } from "../constants/constant";
 import { useNavigate } from "react-router-dom";
 
 import { expenseSchema } from "../schemas/expensesSchema";
