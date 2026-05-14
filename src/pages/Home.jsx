@@ -1,7 +1,11 @@
 import { FaArrowRight } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const words = "Track Your Daily Expenses Easily".split(" ");
+
+  const navigate = useNavigate();
+
   return (
     // heading + sub-heading
     <div className="caret-transparent bg-gray-50 h-screen w-full flex justify-center items-center">
@@ -27,11 +31,17 @@ const Home = () => {
         </article>
 
         <div className="grid grid-cols-2 gap-4">
-          <button className="flex justify-center items-center gap-2 font-semibold cursor-pointer bg-emerald-600 hover:bg-emerald-700 text-white  py-2 px-2 text-base rounded-xl">
+          <button
+            onClick={() => navigate("/add-expense")}
+            className="flex justify-center items-center gap-2 font-semibold cursor-pointer bg-emerald-600 hover:bg-emerald-700 text-white  py-2 px-2 text-base rounded-xl"
+          >
             <span>Get Started</span>
             <FaArrowRight color="#ffffff" size={16} />
           </button>
-          <button className="font-semibold cursor-pointer bg-white  text-gray-500 hover:text-gray-700 hover:bg-emerald-100  border border-gray-400 py-2 px-4 text-base rounded-xl">
+          <button
+            onClick={() => navigate("/dashboard")}
+            className="font-semibold cursor-pointer bg-white  text-gray-500 hover:text-gray-700 hover:bg-emerald-100  border border-gray-400 py-2 px-4 text-base rounded-xl"
+          >
             View Dashboard
           </button>
         </div>

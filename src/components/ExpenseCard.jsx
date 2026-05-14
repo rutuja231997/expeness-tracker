@@ -25,9 +25,9 @@ const ExpenseCard = ({
   };
 
   return (
-    <div className="group flex justify-between items-center w-full cursor-pointer mt-3 rounded-xl border border-gray-300 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
+    <div className="group flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 w-full mt-3 rounded-xl border border-gray-300 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
       {/* left section */}
-      <div className="flex flex-col items-start gap-3">
+      <div className="flex flex-col items-start gap-3 min-w-0">
         {loading ? (
           <>
             {/* title skeleton */}
@@ -38,7 +38,7 @@ const ExpenseCard = ({
           </>
         ) : (
           <>
-            <h3 className="text-base font-semibold text-gray-900">
+            <h3 className="text-base font-semibold text-gray-900 wrap-break-word">
               {expense.title}
             </h3>
 
@@ -54,7 +54,7 @@ const ExpenseCard = ({
       </div>
 
       {/* right section */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-3">
         {loading ? (
           <>
             {/* amount skeleton */}
@@ -66,7 +66,7 @@ const ExpenseCard = ({
         ) : (
           <>
             {/* amount */}
-            <p className="text-lg font-semibold text-gray-900">
+            <p className="text-lg font-semibold text-gray-900 whitespace-nowrap">
               {currencySymbol}
 
               {convertedExpense.toFixed(2)}
@@ -75,7 +75,7 @@ const ExpenseCard = ({
             {/* delete button */}
             <button
               onClick={handleDelete}
-              className="h-9 w-9 rounded-full flex items-center justify-center transition-colors hover:bg-red-100"
+              className="h-9 w-9 rounded-full flex items-center justify-center transition-colors hover:bg-red-100 shrink-0"
             >
               <RiDeleteBinLine size={20} color="#000000" />
             </button>

@@ -36,10 +36,10 @@ const Dashboard = () => {
       <SummaryCard />
 
       {/* converter + expense list */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-        <CurrencyConverter className="w-full md:col-span-1" />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+        <CurrencyConverter className="w-full lg:col-span-1" />
 
-        <ExpenseList className="w-full md:col-span-2" />
+        <ExpenseList className="w-full lg:col-span-2" />
       </div>
     </div>
   );
